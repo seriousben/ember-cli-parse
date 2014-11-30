@@ -9,6 +9,6 @@ module.exports = {
   },
 
   afterInstall: function() {
-    return this.insertIntoFile('.gitignore', '.dist-parse');
+    return this.insertIntoFile('.gitignore', '/dist-parse');
   }
 }
