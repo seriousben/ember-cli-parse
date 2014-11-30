@@ -5,7 +5,7 @@ module.exports = {
 
   includedCommands: function() {
     return {
-      'parse': require('./lib/commands/divshot')
+      'parse': require('./lib/commands/parse')
     }
   },
 

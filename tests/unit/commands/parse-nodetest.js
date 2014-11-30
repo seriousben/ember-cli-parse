@@ -25,6 +25,7 @@ describe('parse command', function() {
 
   beforeEach(function() {
     buildTaskCalled = false;
+    buildTaskReceivedProject = false;
     ui = new MockUI();
     analytics = new MockAnalytics();
     tasks = {
@@ -51,28 +52,56 @@ describe('parse command', function() {
       analytics: analytics,
       project: project,
       environment: { },
+      settings: { },
       tasks: tasks,
       runCommand: function(command, args) {
-        assert.include(command, 'parse-cli/bin/divshot.js');
-        assert.deepEqual(args, ['push']);
+        assert.include(command, 'parse');
+        assert.deepEqual(args, ['deploy']);
+      },
+      refreshParseConfig: function() {
+        return RSVP.resolve();
       }
-    }).validateAndRun(['push']);
+    }).validateAndRun(['deploy']);
   });
 
-  it('runs build before running the command', function() {
+  it('deploy runs build before running the command', function() {
     return new CommandUnderTest({
       ui: ui,
       analytics: analytics,
       project: project,
       environment: { },
+      settings: { },
       tasks: tasks,
       runCommand: function(command, args) {
         assert(buildTaskCalled,
             'expected build task to be called');
         assert(buildTaskReceivedProject,
             'expected build task to receive project');
+      },
+      refreshParseConfig: function() {
+        return RSVP.resolve();
       }
-    }).validateAndRun(['push']);
+    }).validateAndRun(['deploy']);
+  });
+
+  it('log does not run build before running the command', function() {
+    return new CommandUnderTest({
+      ui: ui,
+      analytics: analytics,
+      project: project,
+      environment: { },
+      settings: { },
+      tasks: tasks,
+      runCommand: function(command, args) {
+        assert(!buildTaskCalled,
+            'expected build task to be called');
+        assert(!buildTaskReceivedProject,
+            'expected build task to receive project');
+      },
+      refreshParseConfig: function() {
+        return RSVP.resolve();
+      }
+    }).validateAndRun(['log']);
   });
 });
 
