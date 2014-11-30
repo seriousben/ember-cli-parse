@@ -1,11 +1,11 @@
 var path = require('path');
 
 module.exports = {
-  name: 'ember-cli-divshot',
+  name: 'ember-cli-parse',
 
   includedCommands: function() {
     return {
-      'divshot': require('./lib/commands/divshot')
+      'parse': require('./lib/commands/divshot')
     }
   },
 

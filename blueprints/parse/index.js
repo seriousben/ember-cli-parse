@@ -9,6 +9,6 @@ module.exports = {
   },
 
   afterInstall: function() {
-    return this.insertIntoFile('.gitignore', '.divshot-cache');
+    return this.insertIntoFile('.gitignore', '.parse-cache');
   }
 }

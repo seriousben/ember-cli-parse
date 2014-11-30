@@ -1,6 +1,6 @@
 {
-  "name": "ember-cli-divshot",
-  "version": "0.1.6",
+  "name": "ember-cli-parse",
+  "version": "0.0.1",
   "directories": {
     "doc": "doc",
     "test": "test"
@@ -10,7 +10,7 @@
     "build": "ember build",
     "test": "node tests/runner.js"
   },
-  "repository": "https://github.com/rwjblue/ember-cli-divshot",
+  "repository": "https://github.com/rwjblue/ember-cli-parse",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -29,7 +29,6 @@
     "mocha-jshint": "^0.0.9"
   },
   "dependencies": {
-    "divshot-cli": "1.x.x",
     "rsvp": "~3.0.9"
   }
 }

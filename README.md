@@ -1,6 +1,6 @@
-# Ember-cli-divshot
+# Ember-cli-parse
 
-Simple wrapper for the `divshot-cli` package.  Allows usage of divshot deployment from an ember-cli app with ease.
+Simple wrapper for the `parse-cli` package.  Allows usage of divshot deployment from an ember-cli app with ease.
 
 ## Usage
 
@@ -9,42 +9,42 @@ Simple wrapper for the `divshot-cli` package.  Allows usage of divshot deploymen
 From within your Ember CLI application run:
 
 ```bash
-npm install --save-dev ember-cli-divshot
+npm install --save-dev ember-cli-parse
 ```
 
-### Setting up Divshot
+### Setting up Parse
 
 From within your Ember CLI application run:
 
 ```bash
-ember generate divshot
+ember generate parse
 ```
 
 ### Deploy
 
 ```bash
-ember divshot push
+ember parse push
 ```
 
 By default, the `--environment=production` option will be set for the Ember CLI build step. If
 you'd like to specify the development environment, you can do so with the following command:
 
 ```bash
-ember divshot push --environment=development
+ember parse push --environment=development
 ```
 
-#### Specifying the Divshot environmnet
+#### Specifying the Parse environmnet
 
-The default Divshot environment is `development`, however you can push directly to staging:
+The default Parse environment is `development`, however you can push directly to staging:
 
 ```bash
-ember divshot push staging
+ember parse push staging
 ```
 
 Or production:
 
 ```bash
-ember divshot push production
+ember parse push production
 ```
 
 ## Contributing

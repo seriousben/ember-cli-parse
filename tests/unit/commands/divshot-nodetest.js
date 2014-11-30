@@ -7,9 +7,9 @@ var Command       = require('ember-cli/lib/models/command');
 var Task          = require('ember-cli/lib/models/task');
 var RSVP          = require('rsvp');
 
-var DivshotCommandBase = require('../../../lib/commands/divshot');
+var ParseCommandBase = require('../../../lib/commands/parse');
 
-describe('divshot command', function() {
+describe('parse command', function() {
   var ui;
   var tasks;
   var analytics;
@@ -20,7 +20,7 @@ describe('divshot command', function() {
   var buildTaskReceivedProject;
 
   before(function() {
-    CommandUnderTest = Command.extend(DivshotCommandBase);
+    CommandUnderTest = Command.extend(ParseCommandBase);
   });
 
   beforeEach(function() {
@@ -45,7 +45,7 @@ describe('divshot command', function() {
     };
   });
 
-  it('shells out to `divshot` command line utility', function() {
+  it('shells out to `parse` command line utility', function() {
     return new CommandUnderTest({
       ui: ui,
       analytics: analytics,
@@ -53,7 +53,7 @@ describe('divshot command', function() {
       environment: { },
       tasks: tasks,
       runCommand: function(command, args) {
-        assert.include(command, 'divshot-cli/bin/divshot.js');
+        assert.include(command, 'parse-cli/bin/divshot.js');
         assert.deepEqual(args, ['push']);
       }
     }).validateAndRun(['push']);
