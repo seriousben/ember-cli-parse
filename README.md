@@ -1,9 +1,7 @@
-# Ember-cli-parse
-
-[![Build Status](https://next.travis-ci.org/seriousben/ember-cli-parse.svg)](https://next.travis-ci.org/seriousben/ember-cli-parse)
+# Ember-cli-parse [![Build Status](https://next.travis-ci.org/seriousben/ember-cli-parse.svg)](https://next.travis-ci.org/seriousben/ember-cli-parse)
 
 Simple wrapper for the `parse` binary.  Allows usage of parse deployment from an ember-cli app with ease.
-At the moment this addon only targets static assets, but it could be improved in the future to support 
+At the moment this addon only targets static assets, but it could be improved in the future to support
 server side deploys as well.
 
 ## Usage
